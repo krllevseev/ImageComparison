@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Serving Web Content</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+    <div th:if="${message}">
+        <h4 th:text="${message}"/>
+    </div>
+
+    <div>
+        <form method="POST" enctype="multipart/form-data" action="/">
+            <table>
+                <tr><td>First image to upload:</td><td><input type="file" name="img" /></td></tr>
+                <tr><td>Second image to upload:</td><td><input type="file" name="img2" /></td></tr>
+                <tr><td></td><td><input type="submit" value="Compare" /></td></tr>
+            </table>
+        </form>
+    </div>
+
+    <div th:if="${success}">
+        <img src="result.jpg"/>
+    </div>
+
+</body>
+</html>
